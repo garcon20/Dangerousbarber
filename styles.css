@@ -1,3 +1,7 @@
+
+
+
+
 :root {
     --primary: #ff3a2d;
     --secondary: #1a1a1a;
@@ -10,17 +14,24 @@
     
     /* Dark mode variables */
     --dm-bg: #121212;
-    --dm-text: #f1f1f1;
-    --dm-secondary: #2a2a2a;
+    --dm-text: #f2ecec;
+    --dm-secondary: #a15151;
 }
 
 /* Dark mode */
 [data-theme="dark"] {
     --secondary: var(--dm-secondary);
-    --text: var(--dm-text);
-    --light-text: #aaa;
+    --text: rgb(94, 57, 6);
+    --light-text: #dfae0e;
     --bg-light: var(--dm-bg);
     --white: var(--dm-text);
+}
+[data-theme="light"] {
+    --secondary: var(--primary);
+    --text: #333;
+    --light-text: #777;
+    --bg-light: #f9f9f9;
+    --white: #fff;
 }
 
 * {
@@ -208,7 +219,7 @@ nav {
 }
 
 .book-btn .btn {
-    margin-left: 15px;
+    margin-left: 30px;
     font-size: 0.9rem;
     padding: 8px 15px;
 }
@@ -442,7 +453,6 @@ nav {
     font-weight: 500;
     color: var(--white);
 }
-
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -451,8 +461,8 @@ nav {
     border-radius: 5px;
     border: 1px solid #444;
     background: rgba(255, 255, 255, 0.05);
-    color: var(--white);
-    font-family: 'Poppins', sans-serif;
+    color: rgb(11, 8, 4);
+    font-family: 'pins', sans-serif;
     transition: var(--transition);
     font-size: 1rem;
 }
@@ -754,9 +764,29 @@ footer {
 }
 
 /* Form inputs in light mode */
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group select,
+[data-theme="dark"] .form-group textarea,
+[data-theme="dark"] .form-group button,
+[data-theme="dark"] .form-group input::placeholder,
+[data-theme="dark"] .form-group textarea::placeholder,
+[data-theme="dark"] .form-group select::placeholder,
+[data-theme="dark"] .contact-container {
+    color: var(--white);
+    background: var(--dm-bg);
+
+}
+
+/* Form inputs in dark mode */
 [data-theme="light"] .form-group input,
 [data-theme="light"] .form-group select,
-[data-theme="light"] .form-group textarea {
-    color: var(--black);
-    background: var(--white);
+[data-theme="light"] .form-group textarea,
+[data-theme="light"] .form-group button,
+[data-theme="light"] .form-group input::placeholder,
+[data-theme="light"] .form-group textarea::placeholder,
+[data-theme="light"] .form-group select::placeholder,
+[data-theme="light"] .contact-container {
+    color: var(--secondary);
+    background: var(--light-bg);
 }
+
