@@ -432,6 +432,7 @@ nav {
 
 /* Booking Section */
 .booking-container {
+    color: black;
     display: flex;
     flex-direction: column;
     gap: 30px;
