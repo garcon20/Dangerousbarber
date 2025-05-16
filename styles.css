@@ -789,4 +789,23 @@ footer {
     color: var(--secondary);
     background: var(--light-bg);
 }
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: var(--light-text);
+}
 
+input[type="time"] {
+    /* Ensure consistent styling with other inputs */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* For browsers that don't support time input */
+input[type="time"]::-webkit-inner-spin-button,
+input[type="time"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

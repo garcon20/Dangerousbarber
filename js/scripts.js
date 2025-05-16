@@ -44,7 +44,7 @@ const galleryImages = [
 // Testimonials Data
 const testimonials = [
     {
-        name: 'Kwame O.',
+        name: 'Eugene K.',
         text: 'Best barber in Accra! Always leaves me looking fresh and clean. Highly recommend the executive cut.',
         rating: 5
     },
@@ -241,10 +241,11 @@ function submitBooking() {
     const phone = document.getElementById("phone").value.trim();
     const service = document.getElementById("service").value;
     const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
     const message = document.getElementById("message").value.trim();
 
     // Simple validation
-    if (!name || !phone || !service || !date) {
+    if (!name || !phone || !service || !date || !time) {
         alert("Please fill in all required fields");
         return;
     }
@@ -259,11 +260,21 @@ function submitBooking() {
     // Format phone number for WhatsApp
     const formattedPhone = phone.startsWith('0') ? '+233' + phone.substring(1) : phone;
 
+    // Format time to 12-hour format for better readability
+    const timeParts = time.split(':');
+    let hours = parseInt(timeParts[0]);
+    const minutes = timeParts[1];
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    const formattedTime = `${hours}:${minutes} ${ampm}`;
+
     const whatsappMsg = `*NEW BOOKING*%0A%0A`
         + `*Name:* ${name}%0A`
         + `*Phone:* ${formattedPhone}%0A`
         + `*Service:* ${service}%0A`
         + `*Date:* ${date}%0A`
+        + `*Time:* ${formattedTime}%0A`
         + `*Request:* ${message || 'None'}`;
 
     window.open(`https://wa.me/+233557152051?text=${whatsappMsg}`, '_blank');
