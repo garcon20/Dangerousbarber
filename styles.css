@@ -772,9 +772,7 @@ footer {
 [data-theme="dark"] .form-group textarea::placeholder,
 [data-theme="dark"] .form-group select::placeholder,
 [data-theme="dark"] .contact-container {
-    color: var(--white);
-    background: var(--dm-bg);
-
+    
 }
 
 /* Form inputs in dark mode */
