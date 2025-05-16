@@ -49,13 +49,13 @@ const testimonials = [
         rating: 5
     },
     {
-        name: 'Ama K.',
-        text: 'The ladies cut and color transformed my look. Professional service and attention to detail.',
+        name: 'Big Shot',
+        text: 'Consistently great haircuts. The braids and cut combo is my favorite. Worth every cedi!',
         rating: 5
     },
     {
-        name: 'Yaw M.',
-        text: 'Consistently great haircuts. The braids and cut combo is my favorite. Worth every cedi!',
+        name: 'Tab Tee.',
+        text: 'I love this place! The service is top-notch, and the quality of the hair is outstanding. Will definitely come back again.',
         rating: 4
     }
 ];
@@ -93,11 +93,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+
     // Dark mode toggle
     const darkModeToggle = document.querySelector('.dark-mode-toggle');
-    const currentTheme = localStorage.getItem('theme');
     
-    if (currentTheme === 'dark') {
+    if (localStorage.getItem('theme') === 'dark') {
         document.body.setAttribute('data-theme', 'dark');
         darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
     }
@@ -113,6 +113,27 @@ document.addEventListener('DOMContentLoaded', function() {
             darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
         }
     });
+     
+    // Theme Toggle Functionality
+const themeToggle = document.querySelector('.dark-mode-toggle');
+const currentTheme = localStorage.getItem('theme') || 
+                     window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+// Apply saved theme or system preference
+document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'));
+
+// Toggle on button click
+themeToggle.addEventListener('click', () => {
+    const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    // Update icon
+    themeToggle.innerHTML = newTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+});
+
+// Set initial icon
+themeToggle.innerHTML = localStorage.getItem('theme') === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>'; 
 
     // Load services
     const servicesGrid = document.querySelector('.services-grid');
