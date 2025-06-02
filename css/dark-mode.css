@@ -1,0 +1,102 @@
+/* Dark Mode Styles */
+[data-theme="dark"] {
+    --text: #f5f6fa;
+    --text-light: #a4b0be;
+    --bg: #1e272e;
+    --bg-secondary: #2f3542;
+    
+    .header {
+        background-color: rgba(30, 39, 46, 0.9);
+    }
+    
+    .service-card,
+    .booking-form,
+    .info-card {
+        background-color: var(--dark);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        background-color: var(--bg-secondary);
+        color: var(--text);
+        border-color: #57606f;
+    }
+    
+    .footer {
+        background-color: var(--dark);
+    }
+    
+    .footer-col h3 {
+        color: var(--primary);
+    }
+    
+    .section-title {
+        color: var(--primary);
+    }
+    
+    .section-subtitle {
+        color: var(--text-light);
+    }
+    
+    .service-card h3 {
+        color: var(--primary);
+    }
+    
+    .info-card h3 {
+        color: var(--primary);
+    }
+}
+
+/* Theme Toggle Styles */
+.theme-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 998;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+.sun-icon,
+.moon-icon {
+    position: absolute;
+    transition: var(--transition);
+    font-size: 1.5rem;
+}
+
+.sun-icon {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+}
+
+.moon-icon {
+    transform: translateY(100px) rotate(180deg);
+    opacity: 0;
+}
+
+[data-theme="dark"] .sun-icon {
+    transform: translateY(-100px) rotate(180deg);
+    opacity: 0;
+}
+
+[data-theme="dark"] .moon-icon {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+}

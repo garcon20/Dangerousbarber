@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="theme-color" content="#121212">
+    <title>Dangerous Barber | Premium Barber Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+<div class="loader">
+    <div class="scissors"><i class="fas fa-cut"></i></div>
+    <div class="loader-text">Crafting Your Style</div>
+</div>
+
+<button class="theme-toggle" aria-label="Toggle theme">
+    <i class="fas fa-moon"></i>
+</button>
+
+<a href="https://wa.me/+1234567890" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <img src="images/th.jpg" alt="dangerousbarber_1?igsh" width="50" height="50">
+                <span>Dangerous<span><hr>Barber</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                           <li><a href="#booking" class="nav-link">Booking</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="book-btn">
+                <a href="#booking" class="btn pulse">Book Now</a>
+            </div>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-video">
+            <video autoplay muted loop playsinline>
+                <source src="videos/VID-20250403-WA0011.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 data-aos="fade-up">Precision <span>Perfected</span></h1>
+                <p data-aos="fade-up" data-aos-delay="100">Where classic barbering meets contemporary style</p>
+                <div class="hero-btns" data-aos="fade-up" data-aos-delay="200">
+                    <a href="#booking" class="btn pulse">Book Now</a>
+                    <a href="#services" class="btn btn-outline">Explore Services</a>
+                </div>
+                <div class="scroll-down" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-aos="fade-up">Our Services</h2>
+                <p data-aos="fade-up" data-aos-delay="50">Premium grooming services tailored to your style</p>
+            </div>
+            <div class="services-grid">
+                <!-- Service cards loaded via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-aos="fade-up">Our Craft</h2>
+                <p data-aos="fade-up" data-aos-delay="50">A showcase of our barbering artistry</p>
+            </div>
+            <div class="swiper gallerySwiper" data-aos="fade-up">
+                <div class="swiper-wrapper">
+                    <!-- Gallery items loaded via JavaScript -->
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Booking Section -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-aos="fade-up">Reserve Your Seat</h2>
+                <p data-aos="fade-up" data-aos-delay="50">Book your appointment with ease</p>
+            </div>
+            <div class="booking-container">
+                <div class="booking-form" data-aos="fade-right">
+                    <form id="bookingForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" required placeholder="e.g. 0551234567">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service</label>
+                            <select id="service" required>
+                                <option value="">Select a service</option>
+                                <!-- Options loaded via JavaScript -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="barber">Preferred Barber</label>
+                            <select id="barber">
+                                <option value="">No preference</option>
+                                <!-- Options loaded via JavaScript -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="text" id="date" required onfocus="(this.type='date')">
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Time</label>
+                            <input type="time" id="time" required min="09:00" max="19:00" step="1800">
+                            <small>Open 9:00 AM - 7:00 PM</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="notes">Special Requests</label>
+                            <textarea id="notes" rows="3" placeholder="Any specific instructions..."></textarea>
+                        </div>
+                        <button type="button" class="btn pulse" onclick="submitBooking()">Confirm Booking</button>
+                    </form>
+                </div>
+                <div class="booking-info" data-aos="fade-left">
+                    <h3>Hours of Operation</h3>
+                    <ul class="hours-list">
+                        <li><span>Monday</span><span>9:00 AM - 7:00 PM</span></li>
+                        <li><span>Tuesday</span><span>9:00 AM - 7:00 PM</span></li>
+                        <li><span>Wednesday</span><span>9:00 AM - 7:00 PM</span></li>
+                        <li><span>Thursday</span><span>9:00 AM - 7:00 PM</span></li>
+                        <li><span>Friday</span><span>9:00 AM - 7:00 PM</span></li>
+                        <li><span>Saturday</span><span>9:00 AM - 5:00 PM</span></li>
+                        <li><span>Sunday</span><span>Closed</span></li>
+                    </ul>
+                                    <div class="contact-info">
+                            <h3>Contact Info</h3>
+                            <p><i class="fas fa-map-marker-alt"></i>Legon city mall @ andisbarber1 studio</p>
+                            <p><i class="fas fa-phone"></i>(+233) 55 715 2051</p>
+                            <p><i class="fas fa-envelope"></i>info@dangerousbarber1 on instagram</p>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-aos="fade-up">Client Experiences</h2>
+                <p data-aos="fade-up" data-aos-delay="50">What our clients say about us</p>
+            </div>
+            <div class="swiper testimonialsSwiper" data-aos="fade-up">
+                <div class="swiper-wrapper">
+                    <!-- Testimonials loaded via JavaScript -->
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-aos="fade-up">Get In Touch</h2>
+                <p data-aos="fade-up" data-aos-delay="50">We'd love to hear from you</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Contact Information</h3>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Legon city mall @ andisbarber1 studio
+                                    
+                                </p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>(+233) 55 715 2051</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>Dangerousbarber436@gmail.com</p>
+                        </div>
+                    </div>
+                      <div class="social-links">
+                            <a href="https://www.instagram.com/dangerousbarber_1?igsh=Y2dyeHkzcHpmOWRv" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href= "https://www.tiktok.com/@dangerousbarber1?_t=ZM-8vT7IWZQdTr&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                
+                </div>
+                <div class="contact-form" data-aos="fade-left">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="contactName" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="contactEmail" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="contactSubject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="contactMessage" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo">
+                    <img src="images/th.jpg" alt="Elite Cuts" width="40" height="40">
+                    <span>Elite<span>Cuts</span></span>
+                </div>
+                <p>Precision barbering with a modern touch. Crafting exceptional looks since 2015.</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/dangerousbarber_1?igsh=Y2dyeHkzcHpmOWRv" target="_blank"><i class="fab fa-instagram"></i></a>
+                     <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#team">Barbers</a></li>
+                    <li><a href="#booking">Booking</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                        <li><a href="#">Executive Cut (₵200)</a></li>
+                        <li><a href="#">Normal Cut (₵100)</a></li>
+                        <li><a href="#">Hair Unit (₵600)</a></li>
+                        <li><a href="#">Braids and Cut (₵200)</a></li>
+                        <li><a href="#">Ladies Cut (₵200)</a></li>
+                    </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Newsletter</h3>
+                <p>Subscribe for exclusive offers and styling tips</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Dangerous barber. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/scripts.js"></script>
+</body>
+</html>
